@@ -17,6 +17,7 @@ public class Advertisement {
 	
 	public Advertisement(int id, String description, Contact contact) {
 		super();
+		System.out.println("Advertisement Bean");
 		this.id = id;
 		this.description = description;
 		this.contact = contact;

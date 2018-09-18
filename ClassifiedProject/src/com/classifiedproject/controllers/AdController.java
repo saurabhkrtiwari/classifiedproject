@@ -15,9 +15,10 @@ public class AdController {
 	@RequestMapping("/viewAd")
 	public String viewAd(Model m)
 	{
-		Contact contact =new Contact("Saurabh", "xyz@gmail.com", "9410451959");
-		Advertisement ad1 = new Advertisement(1, "First Ad", contact);
-		Advertisement ad2 = new Advertisement(2, "Second Ad", contact);
+		Contact contact1 =new Contact("Saurabh", "xyz@gmail.com", "9410451959");
+		Contact contact2 =new Contact("Anuj", "ABC@gmail.com", "XXXXXXXXX");
+		Advertisement ad1 = new Advertisement(1, "First Ad", contact1);
+		Advertisement ad2 = new Advertisement(2, "Second Ad", contact2);
 		List<Advertisement> adList = new ArrayList<>();
 		adList.add(ad1);
 		adList.add(ad2);

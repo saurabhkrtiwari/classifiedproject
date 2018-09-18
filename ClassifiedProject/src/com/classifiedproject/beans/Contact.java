@@ -19,6 +19,7 @@ public Contact(String username, String emailid, String mobile) {
 	this.username = username;
 	this.emailid = emailid;
 	this.mobile = mobile;
+	System.out.println("Contact Accessed");
 }
 
 
