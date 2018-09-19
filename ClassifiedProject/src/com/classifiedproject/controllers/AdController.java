@@ -13,19 +13,33 @@ import com.classifiedproject.beans.Contact;
 public class AdController {
  
 	@RequestMapping("/viewAd")
-	public String viewAd(Model m)
+	public Model viewAd(Model m)
 	{
 		Contact contact1 =new Contact("Saurabh", "xyz@gmail.com", "9410451959");
 		Contact contact2 =new Contact("Anuj", "ABC@gmail.com", "XXXXXXXXX");
-		Advertisement ad1 = new Advertisement(1, "First Ad", contact1);
-		Advertisement ad2 = new Advertisement(2, "Second Ad", contact2);
+		Advertisement ad;
+		//Advertisement ad2 = new Advertisement(2, "Second Ad", contact2);
 		List<Advertisement> adList = new ArrayList<>();
-		adList.add(ad1);
-		adList.add(ad2);
-	m.addAttribute("adlist",adList);  
+		Contact contact = new Contact();
+		for(int i=1;i<=200;i++)
+		{				
+			if(i%2==0)
+			{
+				contact = contact2;
+			}
+			else
+			{
+				contact= contact1;
+			}
+			ad = new Advertisement(i, "Advertisement Number "+i, contact);
+			adList.add(ad);
+			
+		}
+		
+	m.addAttribute(adList);  
 		
 		
 		
-		return "viewAd";
+		return m;
 	}
 }
