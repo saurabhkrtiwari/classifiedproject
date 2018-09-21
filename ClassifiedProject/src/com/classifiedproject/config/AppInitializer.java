@@ -11,20 +11,20 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Class[] {SecurityConfig.class};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		// TODO Auto-generated method stub
+		
 		return new Class[] { SetupConfig.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		// TODO Auto-generated method stub
-		return new String[] {"/","/viewAd"};
+		
+		return new String[] {"/"};
 	}
 	
 	

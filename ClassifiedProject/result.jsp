@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome PAge
-Click Here To lOgin <a href="${pageContext.request.contextPath}/profile"></a>
+<h1>Hello Result</h1>
 </body>
 </html>

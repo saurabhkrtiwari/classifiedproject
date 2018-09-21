@@ -1,17 +1,25 @@
 package com.classifiedproject.controllers;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.classifiedproject.beans.Advertisement;
 import com.classifiedproject.beans.Contact;
 @Controller
 public class AdController {
- 
+ @Autowired
+ private BCryptPasswordEncoder bcrypt;
 	@RequestMapping("/viewAd")
 	public Model viewAd(Model m)
 	{
@@ -41,5 +49,17 @@ public class AdController {
 		
 		
 		return m;
+	}
+	@RequestMapping("/profile")
+	public String showProfile(Model model,Principal p) {
+		//+String pass=request.get
+		//System.out.println("Password Matcher "+request.getParameter("password"));
+		model.addAttribute("username", p.getName());
+		
+		return "profile";
+	}
+	@RequestMapping("/admin")
+	public String showAdmin() {
+		return "admin";
 	}
 }
